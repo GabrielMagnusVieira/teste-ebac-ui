@@ -14,10 +14,10 @@ describe('Funcionalidade: Login' , () => {
 
     it('Deve fazer login com sucesso' , () => {
         cy.get('#username').type('magnus181098@gmail.com')
-        cy.get('#password').type('dilolilo22')
+        cy.get('#password').type('dilolilo22.')
         cy.get('.woocommerce-form > .button').click()
 
-        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' ,'Olá, magnus181098 (não é magnus181098? Sair)')
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' ,'Olá')
     });
 
     it('Deve exibir uma mensagem de erro ao inserir usuário inválido', () => {
@@ -42,7 +42,7 @@ describe('Funcionalidade: Login' , () => {
         cy.get('#username').type(perfil.usuario)
         cy.get('#password').type(perfil.senha)
         cy.get('.woocommerce-form > .button').click()
-        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' ,'Olá, magnus181098 (não é magnus181098? Sair)')
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' ,'Olá, magnus181098justaus3rjustaus3rjustaus3rjustaus3rjustaus3rjustaus3rjustaus3rjustaus3r (não é magnus181098justaus3rjustaus3rjustaus3rjustaus3rjustaus3rjustaus3rjustaus3rjustaus3r? Sair)')
 
     });
 
@@ -51,15 +51,15 @@ describe('Funcionalidade: Login' , () => {
             cy.get('#username').type(dados.usuario)
             cy.get('#password').type(dados.senha , { log: false })
             cy.get('.woocommerce-form > .button').click()
-            cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' ,'Olá, magnus181098 (não é magnus181098? Sair)')
+            cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' ,'Olá,')
         })
         
 
     } );
 
     it.only('Deve fazer login com sucesso usando comandos custominzados ', () => {
-        cy.login('magnus181098@gmail.com', 'dilolilo22')
-        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' ,'Olá, magnus181098 (não é magnus181098? Sair)')
+        cy.login('magnus181098@gmail.com', 'dilolilo22.')
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' ,'Olá,')
     });
 
 

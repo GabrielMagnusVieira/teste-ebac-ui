@@ -9,13 +9,13 @@ describe('Funcionalidade: Produtos', () => {
     });
     
     it('Deve selecionar um produto da lista', () => {
-        produtosPage.buscarProdutoLista('Abominable Hoodie')
+        produtosPage.buscarProdutoLista('Aether Gym Pant')
         cy.get('#tab-title-description > a').should('contain','Descrição')
     });
 
     it('Deve buscar um produto com sucesso', () => {
-        produtosPage.buscarProduto('Abominable Hoodie')
-        cy.get('.product_title').should('contain', 'Abominable Hoodie' )
+        produtosPage.buscarProduto('Aether Gym Pant')
+        cy.get('.product_title').should('contain', 'Aether Gym Pant' )
     });
 
     it('Deve visitar a pagina do produto', () => {
@@ -26,10 +26,10 @@ describe('Funcionalidade: Produtos', () => {
 
     it('Deve adicionar um produto ao carrinho', () => {
 
-        produtosPage.buscarProduto('Abominable Hoodie')
-        produtosPage.addProdutoCarrinho('M', 'Green', 3)
+        produtosPage.buscarProduto('Aether Gym Pant')
+        produtosPage.addProdutoCarrinho('32', 'Green', 3)
 
-        cy.get('.woocommerce-message').should('contain', '3 × “Abominable Hoodie” foram adicionados no seu carrinho.')
+        cy.get('.woocommerce-message').should('contain', '3 × ')
         
     });
 

@@ -7,7 +7,7 @@ describe('Funcionalidade: Detalhes da conta', () => {
         cy.fixture('perfil').then(login => { 
 
         })
-        cy.login('magnus181098@gmail.com', 'dilolilo22')
+        cy.login('magnus181098@gmail.com', 'dilolilo22.')
     });
 
     it('Deve completar detalhes da conta com sucesso', () => {
