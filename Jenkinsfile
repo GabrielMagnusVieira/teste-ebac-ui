@@ -5,6 +5,7 @@ pipeline {
         stage('Clonar o repositório') {
             steps {
                 git branch: 'main', url: 'https://github.com/GabrielMagnusVieira/teste-ebac-ui.git'
+
             }
         }
         stage('Instalar dependências') {
